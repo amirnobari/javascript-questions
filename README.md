@@ -5149,3 +5149,49 @@ The condition within the `if` statement checks whether the value of `!typeof ran
 
 </p>
 </details>
+
+---
+
+###### 156. What's the output?
+
+```javascript
+function factorial(n) {
+    if (n === 0) {
+        return 1
+    } else {
+        return n * factorial(n - 1)
+    }
+}
+console.log(factorial(5)) 
+```
+
+- A: `25`
+- B: `4`
+- C: `120`
+- D: `125`
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+#### Answer: C
+
+According to factorial calculation using Recursion:
+
+`factorial(5) = 5 * factorial(4)`
+`factorial(4) = 4 * factorial(3)`
+`factorial(3) = 3 * factorial(2)`
+`factorial(2) = 2 * factorial(1)`
+`factorial(1) = 1`
+
+Now the values are recursively returned from these states and multiplied together:
+
+`factorial(1) = 1`
+`factorial(2) = 2 * 1 = 2`
+`factorial(3) = 3 * 2 = 6`
+`factorial(4) = 4 * 6 = 24`
+`factorial(5) = 5 * 24 = 120`
+
+Therefore, `factorial(5)` is equal to 120.
+
+</p>
+</details>
